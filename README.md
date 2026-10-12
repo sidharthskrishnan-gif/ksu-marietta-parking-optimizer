@@ -4,8 +4,6 @@ A schedule-aware decision-support tool for Kennesaw State University's Marietta 
 
 > **Status:** Presentable MVP / demo. The recommendation engine is deterministic; uncertainty is reported separately through sensitivity analysis. This is an independent student project and is **not an official Kennesaw State University service**.
 
-![Recommendation overview](docs/screenshots/recommendation-overview.png)
-
 ## What it does
 
 - Accepts a recurring weekly class schedule using 12-hour AM/PM input.
@@ -16,8 +14,8 @@ A schedule-aware decision-support tool for Kennesaw State University's Marietta 
 - Recommends a preferred lot and an arrival-by time for each parking session.
 - Handles after-5 PM flex-parking behavior.
 - Reports the runner-up, score separation, search-risk estimates, and recommendation confidence.
-- Reruns the schedule under schedule-conditioned preference tilts to show how the recommendation changes when one priority matters more.
-- Flags cheaper alternatives for students who only commute one or two days per week without changing the underlying ranking.
+- Reruns the same schedule under schedule-conditioned preference tilts to show how the recommendation changes when one priority matters more.
+- Flags cheaper alternatives for students who commute only one or two days per week without changing the underlying ranking.
 
 ## Why this project exists
 
@@ -54,17 +52,7 @@ Python 3.10+ is recommended.
 
 ```bash
 python -m venv .venv
-```
-
-Activate the environment, then install the dependencies:
-
-```bash
 pip install -r requirements.txt
-```
-
-Start the app:
-
-```bash
 streamlit run app.py
 ```
 
@@ -82,11 +70,13 @@ A GitHub Actions workflow runs the same test suite on pushes and pull requests.
 
 ## Deploy with Streamlit Community Cloud
 
-1. Create a public GitHub repository named `ksu-marietta-parking-optimizer`.
-2. Upload/push the contents of this repository to the `main` branch.
-3. In Streamlit Community Cloud, create a new app from the repository.
+1. Sign in to Streamlit Community Cloud with GitHub.
+2. Create a new app from this repository.
+3. Select the `main` branch.
 4. Set the entry point to `app.py`.
 5. Deploy. No API keys or secrets are required for the current MVP.
+
+See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for more detail.
 
 ## Data and modeling
 
@@ -96,19 +86,8 @@ Runtime data lives in [`data/`](data/):
 - `parking_areas.csv` — lot characteristics, shade, occupancy pressure, searchability, and model confidence.
 - `permits.csv` — commuter permit names, colors, and Fall 2026 pricing used by the demo.
 - `search_risk_modifiers.csv` — time-of-day, semester-phase, and lot-specific risk modifiers.
-- `source_observations.csv` — structured community observations used during calibration and edge-case analysis. It is included for transparency but is not loaded by the app at runtime.
 
 The model separates normal historical conditions from unusually severe disruption reports rather than averaging crisis conditions into the everyday baseline.
-
-## Screenshots
-
-### Permit comparison
-
-![Permit comparison](docs/screenshots/permit-comparison.png)
-
-### Preference sensitivity
-
-![Priority sensitivity](docs/screenshots/priority-sensitivity.png)
 
 ## Limitations
 
@@ -130,11 +109,10 @@ The model separates normal historical conditions from unusually severe disruptio
 │   ├── parking_areas.csv
 │   ├── permits.csv
 │   ├── search_risk_modifiers.csv
-│   ├── source_observations.csv
 │   └── walking_distances.csv
 ├── docs/
-│   ├── METHODOLOGY.md
-│   └── screenshots/
+│   ├── DEPLOYMENT.md
+│   └── METHODOLOGY.md
 ├── tests/
 │   └── test_optimizer.py
 └── .github/
