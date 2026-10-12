@@ -24,7 +24,7 @@ The same architecture could be adapted to other decision-support problems involv
 Once the live Streamlit app is open:
 
 1. Click **Load example schedule**.
-2. Leave the default priorities in place.
+2. The app automatically loads example priorities and semester week 1 so the uncertainty and tradeoff features are easy to see.
 3. Click **Recommend my permit**.
 4. Review the permit ranking, day-specific parking plan, uncertainty/confidence output, and preference-sensitivity section.
 
