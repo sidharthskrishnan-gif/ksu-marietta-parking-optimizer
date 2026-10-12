@@ -144,5 +144,3 @@ Commuting only one or two days per week does not automatically change the score.
 ## Evidence and limitations
 
 The model combines official permit/map constraints, a mapped walking-distance matrix, firsthand campus observations, and structured community reports. Community reports are treated as imperfect evidence and extreme Fall 2025 disruption reports are not averaged into the normal baseline.
-
-See `data/source_observations.csv` for the structured observation set used during calibration.
