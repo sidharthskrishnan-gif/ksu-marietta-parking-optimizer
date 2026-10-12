@@ -23,8 +23,14 @@ MINUTES = [0, 15, 30, 45]
 
 st.title("KSU Marietta Parking Permit Optimizer")
 st.caption(
-    "Build your weekly schedule, set your priorities, and compare the permit "
+    "A multi-criteria decision-support system applied to commuter parking. "
+    "Build a weekly schedule, set your priorities, and compare the permit "
     "that best fits your actual routine."
+)
+
+st.info(
+    "Not a KSU commuter? Load the example schedule below to see the full model in action "
+    "without needing any campus knowledge."
 )
 
 buildings = list_buildings(DATA_DIR)
@@ -68,16 +74,72 @@ def display_schedule(rows):
         for r in sorted_classes(rows)
     ])
 
+def find_building(fragment):
+    matches = [b for b in buildings if fragment.lower() in b.lower()]
+    if not matches:
+        raise ValueError(f"No campus building matched {fragment!r}.")
+    return matches[0]
+
+def load_demo_schedule():
+    demo = [
+        {
+            "day": "Monday",
+            "building": find_building("Mathematics"),
+            "start_time": "08:00",
+            "end_time": "09:15",
+        },
+        {
+            "day": "Monday",
+            "building": find_building("Academic"),
+            "start_time": "12:00",
+            "end_time": "13:15",
+        },
+        {
+            "day": "Monday",
+            "building": find_building("Engineering Technology"),
+            "start_time": "17:30",
+            "end_time": "18:45",
+        },
+        {
+            "day": "Tuesday",
+            "building": find_building("Joe Mack Wilson"),
+            "start_time": "11:00",
+            "end_time": "12:15",
+        },
+    ]
+    st.session_state.classes = validate_schedule(demo, DATA_DIR)
+    st.session_state.result = None
+
+    # Preconfigure the example to demonstrate both "stay" and "leave" gap behavior.
+    st.session_state["gap_Monday_09:15_12:00"] = "No"
+    st.session_state["gap_Monday_13:15_17:30"] = "Yes"
+
 with st.expander("How this works"):
     st.write(
-        "The ranking is deterministic. It uses mapped walking times, parking "
-        "search difficulty, semester/time effects, shade, and permit price."
+        "This is a general multi-criteria decision-support pattern applied to a real campus problem. "
+        "The ranking is deterministic: recurring behavior, geography, parking constraints, "
+        "historical conditions, and user priorities are converted into a comparable permit score. "
+        "Uncertainty is analyzed separately instead of being hidden inside the recommendation."
     )
 
 st.header("1. Build your weekly schedule")
 st.write(
     "Add one class at a time. You only need the day, building, start time, and end time."
 )
+
+demo_col, clear_col, spacer_col = st.columns([1.5, 1, 4])
+with demo_col:
+    if st.button("Load example schedule", type="secondary"):
+        try:
+            load_demo_schedule()
+            st.rerun()
+        except Exception as exc:
+            st.error(str(exc))
+with clear_col:
+    if st.button("Clear schedule", key="clear_schedule_top"):
+        st.session_state.classes = []
+        st.session_state.result = None
+        st.rerun()
 
 with st.form("add_class_form"):
     c1, c2 = st.columns([1, 2])
@@ -255,6 +317,10 @@ if result:
     st.divider()
     confidence = result["confidence"]
 
+    confidence_display = confidence["label"]
+    if confidence["label"] == "Low" and confidence["runner_up_gap"] < 1.0:
+        confidence_display = "Low — close race"
+
     a, b, c = st.columns([2, 1, 1])
     with a:
         st.subheader("Recommended permit")
@@ -263,16 +329,22 @@ if result:
     with b:
         st.metric("Semester price", f"${result['price']:.0f}")
         st.metric("Model score", f"{result['score']:.1f}")
+        st.caption("Lower is better. The score is meaningful only relative to the other permits for this schedule.")
     with c:
-        st.metric("Confidence", confidence["label"])
+        st.metric("Confidence", confidence_display)
         st.caption(
-            f"{confidence['winner_stability_percent']:.1f}% winner stability"
+            f"{confidence['winner_stability_percent']:.1f}% winner stability. "
+            "Confidence measures how robust the #1 ranking is when uncertain inputs are perturbed."
         )
 
     if result.get("low_frequency_guidance"):
         st.info(result["low_frequency_guidance"])
 
     st.subheader("Your weekly parking plan")
+    st.caption(
+        "Search risk is a relative 0–100 estimate of parking-search inconvenience, "
+        "not the probability of finding a space."
+    )
     plan = []
     for s in result["sessions"]:
         plan.append({
@@ -315,8 +387,9 @@ if result:
 
     st.subheader("How changing your priorities affects the recommendation")
     st.write(
-        "These are schedule-conditioned comparisons, not 100/0 extremes. "
-        "Each one emphasizes a single preference while keeping the others relevant."
+        "This is the model's counterfactual sensitivity analysis. These are schedule-conditioned "
+        "comparisons, not 100/0 extremes. Each one emphasizes a single preference while keeping "
+        "the others relevant and reruns the full optimizer."
     )
 
     trade = [{
