@@ -1,0 +1,32 @@
+﻿rule_id,rule_type,target,condition,value,unit,confidence,source_reference,notes
+OCC_LOW,occupancy_base,all,occupancy_pressure == low,25,risk_points,provisional,V2 calibration,Compressed common inconvenience scale.
+OCC_LOW_MEDIUM,occupancy_base,all,occupancy_pressure == low_medium,32,risk_points,provisional,V2 calibration,Compressed common inconvenience scale.
+OCC_MEDIUM,occupancy_base,all,occupancy_pressure == medium,40,risk_points,provisional,V2 calibration,Normal baseline.
+OCC_MEDIUM_HIGH,occupancy_base,all,occupancy_pressure == medium_high,48,risk_points,provisional,V2 calibration,Compressed common inconvenience scale.
+OCC_HIGH,occupancy_base,all,occupancy_pressure == high,57,risk_points,provisional,V2 calibration,"Crowded, but not automatically catastrophic."
+OCC_VERY_HIGH,occupancy_base,all,occupancy_pressure == very_high,68,risk_points,provisional,V2 calibration,Reserved for unusually difficult baseline conditions.
+TIME_BEFORE_0830,time_modifier,all,arrival_time < 08:30,-12,risk_points,medium,Reddit observations,Early arrivals consistently easier.
+TIME_0830_0929,time_modifier,all,08:30 <= arrival_time < 09:30,-6,risk_points,medium,Reddit observations,Demand rising but below peak.
+TIME_0930_1029,time_modifier,all,09:30 <= arrival_time < 10:30,2,risk_points,medium,Reddit observations,Transition to peak.
+TIME_1030_1359,time_modifier,all,10:30 <= arrival_time < 14:00,6,risk_points,medium,Reddit observations,Main normal peak band.
+TIME_1400_1459,time_modifier,all,14:00 <= arrival_time < 15:00,3,risk_points,medium,Reddit observations,Demand declining.
+TIME_1500_1659,time_modifier,all,15:00 <= arrival_time < 17:00,-6,risk_points,medium,Reddit observations,Generally easier after 3 PM.
+TIME_AFTER_1700,time_modifier,all,arrival_time >= 17:00,-12,risk_points,medium,Reddit + flex policy,Evening conditions generally easier.
+SEM_WEEKS_1_2,semester_modifier,all,"semester_week in [1,2]",12,risk_points,high,Reddit + institutional context,Distinct high-demand opening phase.
+SEM_WEEKS_3_4,semester_modifier,all,"semester_week in [3,4]",6,risk_points,medium,Reddit + user observation,Elevated but declining.
+SEM_WEEKS_5_12,semester_modifier,all,5 <= semester_week <= 12,0,risk_points,medium,Baseline,Normal midsemester.
+SEM_WEEKS_13_15,semester_modifier,all,13 <= semester_week <= 15,-6,risk_points,medium,User observation,Late-semester easing.
+SEM_FINALS,semester_modifier,all,semester_phase == finals,-3,risk_points,low,Limited evidence,Conservative finals easing.
+WEST_DECK_CIRCULATION,conditional_searchability,West Deck,pre_search_risk >= 50,4,risk_points,medium,Reddit observations,Only matters when deck is already busy.
+REGIME_SEVERE_DISRUPTION,regime_modifier,all,operating_regime == severe_disruption,18,risk_points,high,Fall 2025 disruption evidence,Not active by default.
+WEEKDAY_NONE,weekday_modifier,all,any weekday,0,risk_points,high,Insufficient evidence,No weekday coefficient in MVP.
+RESERVE_0_29,search_reserve,all,0 <= final_search_risk <= 29,3,minutes,provisional,V2 calibration,Arrival reserve.
+RESERVE_30_39,search_reserve,all,30 <= final_search_risk <= 39,5,minutes,provisional,V2 calibration,Arrival reserve.
+RESERVE_40_49,search_reserve,all,40 <= final_search_risk <= 49,7,minutes,provisional,V2 calibration,Arrival reserve.
+RESERVE_50_59,search_reserve,all,50 <= final_search_risk <= 59,10,minutes,provisional,V2 calibration,Arrival reserve.
+RESERVE_60_69,search_reserve,all,60 <= final_search_risk <= 69,14,minutes,provisional,V2 calibration,Arrival reserve.
+RESERVE_70_100,search_reserve,all,70 <= final_search_risk <= 100,18,minutes,provisional,V2 calibration,High-risk sessions retain a meaningful buffer without assuming a crisis.
+CENTRAL1_SEARCHABILITY_QUIET,conditional_searchability,Central Lot 1,pre_search_risk < 40,6,risk_points,high,user firsthand observation,Modest geometry penalty when vacancies are plentiful.
+CENTRAL1_SEARCHABILITY_MODERATE,conditional_searchability,Central Lot 1,40 <= pre_search_risk < 50,10,risk_points,high,user firsthand observation,Poor sightlines matter more as vacancies become less obvious.
+CENTRAL1_SEARCHABILITY_BUSY,conditional_searchability,Central Lot 1,50 <= pre_search_risk < 60,15,risk_points,high,user firsthand observation,Busy conditions magnify slanted/tight-row search difficulty.
+CENTRAL1_SEARCHABILITY_PEAK,conditional_searchability,Central Lot 1,pre_search_risk >= 60,20,risk_points,high,user firsthand observation,Scattered vacancies make the layout strongly search-unfriendly.
