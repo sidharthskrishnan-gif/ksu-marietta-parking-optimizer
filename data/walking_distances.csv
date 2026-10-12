@@ -1,0 +1,181 @@
+﻿Parking Lot,Building,Walking Distance,Distance (Meters),Walking Duration,Duration (Seconds)
+Central Lot 1,Mathematics Building,0.12 mi,194,3 mins,174
+Central Lot 1,Lawrence V. Johnson Library,0.21 mi,333,5 mins,286
+Central Lot 1,Engineering Lab Building,0.23 mi,374,5 mins,324
+Central Lot 1,Academic Building,0.30 mi,490,7 mins,406
+Central Lot 1,Atrium Building,0.36 mi,581,8 mins,479
+Central Lot 1,Civil and Environmental Engineering,0.48 mi,771,10 mins,612
+Central Lot 1,Engineering Technology Center,0.25 mi,398,6 mins,333
+Central Lot 1,Crawford Lab Building,0.20 mi,322,5 mins,282
+Central Lot 2,Mathematics Building,0.13 mi,211,3 mins,197
+Central Lot 2,Lawrence V. Johnson Library,0.22 mi,350,5 mins,309
+Central Lot 2,Engineering Lab Building,0.24 mi,391,6 mins,347
+Central Lot 2,Academic Building,0.32 mi,507,7 mins,429
+Central Lot 2,Atrium Building,0.37 mi,598,8 mins,502
+Central Lot 2,Civil and Environmental Engineering,0.49 mi,789,11 mins,635
+Central Lot 2,Engineering Technology Center,0.26 mi,415,6 mins,356
+Central Lot 2,Crawford Lab Building,0.21 mi,339,5 mins,305
+East Lot 1,Mathematics Building,0.20 mi,319,5 mins,272
+East Lot 1,Lawrence V. Johnson Library,0.20 mi,319,5 mins,272
+East Lot 1,Engineering Lab Building,0.29 mi,462,6 mins,388
+East Lot 1,Academic Building,0.29 mi,474,6 mins,387
+East Lot 1,Atrium Building,0.35 mi,562,8 mins,454
+East Lot 1,Civil and Environmental Engineering,0.47 mi,763,10 mins,593
+East Lot 1,Engineering Technology Center,0.36 mi,578,8 mins,484
+East Lot 1,Crawford Lab Building,0.32 mi,521,7 mins,441
+East Lot 2,Mathematics Building,0.20 mi,315,5 mins,274
+East Lot 2,Lawrence V. Johnson Library,0.18 mi,291,4 mins,258
+East Lot 2,Engineering Lab Building,0.25 mi,402,6 mins,350
+East Lot 2,Academic Building,0.23 mi,373,5 mins,311
+East Lot 2,Atrium Building,0.29 mi,460,6 mins,377
+East Lot 2,Civil and Environmental Engineering,0.41 mi,662,9 mins,517
+East Lot 2,Engineering Technology Center,0.33 mi,531,8 mins,455
+East Lot 2,Crawford Lab Building,0.32 mi,517,7 mins,443
+West Deck,Mathematics Building,0.24 mi,382,5 mins,329
+West Deck,Lawrence V. Johnson Library,0.23 mi,364,5 mins,316
+West Deck,Engineering Lab Building,0.16 mi,252,4 mins,228
+West Deck,Academic Building,0.13 mi,214,3 mins,177
+West Deck,Atrium Building,0.18 mi,285,4 mins,228
+West Deck,Civil and Environmental Engineering,0.27 mi,427,5 mins,322
+West Deck,Engineering Technology Center,0.06 mi,102,2 mins,100
+West Deck,Crawford Lab Building,0.16 mi,265,4 mins,236
+West Lot,Mathematics Building,0.44 mi,709,10 mins,610
+West Lot,Lawrence V. Johnson Library,0.37 mi,593,9 mins,518
+West Lot,Engineering Lab Building,0.36 mi,577,8 mins,507
+West Lot,Academic Building,0.29 mi,468,7 mins,416
+West Lot,Atrium Building,0.24 mi,387,6 mins,333
+West Lot,Civil and Environmental Engineering,0.08 mi,135,2 mins,113
+West Lot,Engineering Technology Center,0.33 mi,533,8 mins,485
+West Lot,Crawford Lab Building,0.42 mi,673,10 mins,603
+East Economy Lot,Mathematics Building,0.27 mi,427,6 mins,363
+East Economy Lot,Lawrence V. Johnson Library,0.27 mi,427,6 mins,362
+East Economy Lot,Engineering Lab Building,0.35 mi,570,8 mins,479
+East Economy Lot,Academic Building,0.34 mi,547,8 mins,451
+East Economy Lot,Atrium Building,0.39 mi,635,9 mins,517
+East Economy Lot,Civil and Environmental Engineering,0.52 mi,836,11 mins,657
+East Economy Lot,Engineering Technology Center,0.43 mi,686,10 mins,574
+East Economy Lot,Crawford Lab Building,0.39 mi,628,9 mins,531
+Shuttle Lot,Mathematics Building,0.56 mi,895,13 mins,801
+Shuttle Lot,Lawrence V. Johnson Library,0.59 mi,946,14 mins,847
+Shuttle Lot,Engineering Lab Building,0.52 mi,834,13 mins,759
+Shuttle Lot,Academic Building,0.48 mi,774,12 mins,691
+Shuttle Lot,Atrium Building,0.47 mi,752,11 mins,662
+Shuttle Lot,Civil and Environmental Engineering,0.50 mi,806,11 mins,671
+Shuttle Lot,Engineering Technology Center,0.43 mi,693,11 mins,634
+Shuttle Lot,Crawford Lab Building,0.48 mi,779,12 mins,710
+East Economy Central,Mathematics Building,0.35 mi,570,8 mins,497
+East Economy Central,Lawrence V. Johnson Library,0.28 mi,454,7 mins,404
+East Economy Central,Engineering Lab Building,0.33 mi,532,8 mins,471
+East Economy Central,Academic Building,0.29 mi,464,7 mins,405
+East Economy Central,Atrium Building,0.25 mi,402,6 mins,350
+East Economy Central,Civil and Environmental Engineering,0.36 mi,587,8 mins,472
+East Economy Central,Engineering Technology Center,0.41 mi,654,10 mins,575
+East Economy Central,Crawford Lab Building,0.44 mi,715,10 mins,618
+East Economy Southeast,Mathematics Building,0.59 mi,952,14 mins,827
+East Economy Southeast,Lawrence V. Johnson Library,0.52 mi,835,12 mins,735
+East Economy Southeast,Engineering Lab Building,0.53 mi,851,13 mins,752
+East Economy Southeast,Academic Building,0.48 mi,769,11 mins,668
+East Economy Southeast,Atrium Building,0.45 mi,721,10 mins,624
+East Economy Southeast,Civil and Environmental Engineering,0.37 mi,603,8 mins,502
+East Economy Southeast,Engineering Technology Center,0.60 mi,973,14 mins,848
+East Economy Southeast,Crawford Lab Building,0.64 mi,1034,15 mins,900
+Central Lot 1,Science Lab Annex,0.24 mi,394,6 mins,340
+Central Lot 1,Norton Hall,0.27 mi,434,6 mins,360
+Central Lot 1,Joe Mack Wilson Student Center,0.13 mi,205,3 mins,181
+Central Lot 1,Stingers Dining Hall,0.31 mi,494,7 mins,403
+Central Lot 1,W. Clair Harris Textile Center,0.41 mi,658,9 mins,527
+Central Lot 1,Architecture,0.50 mi,805,11 mins,643
+Central Lot 1,Design 1 Building,0.30 mi,476,7 mins,397
+Central Lot 1,Design 2 Building,0.34 mi,540,7 mins,444
+Central Lot 2,Science Lab Annex,0.26 mi,411,6 mins,363
+Central Lot 2,Norton Hall,0.27 mi,430,6 mins,370
+Central Lot 2,Joe Mack Wilson Student Center,0.14 mi,222,3 mins,204
+Central Lot 2,Stingers Dining Hall,0.32 mi,511,7 mins,426
+Central Lot 2,W. Clair Harris Textile Center,0.42 mi,675,9 mins,550
+Central Lot 2,Architecture,0.51 mi,822,11 mins,666
+Central Lot 2,Design 1 Building,0.31 mi,493,7 mins,420
+Central Lot 2,Design 2 Building,0.35 mi,557,8 mins,467
+East Lot 1,Science Lab Annex,0.31 mi,492,7 mins,411
+East Lot 1,Norton Hall,0.21 mi,338,5 mins,275
+East Lot 1,Joe Mack Wilson Student Center,0.25 mi,395,6 mins,339
+East Lot 1,Stingers Dining Hall,0.42 mi,674,9 mins,546
+East Lot 1,W. Clair Harris Textile Center,0.40 mi,639,8 mins,502
+East Lot 1,Architecture,0.45 mi,732,10 mins,577
+East Lot 1,Design 1 Building,0.39 mi,620,8 mins,505
+East Lot 1,Design 2 Building,0.39 mi,633,9 mins,511
+East Lot 2,Science Lab Annex,0.28 mi,444,6 mins,383
+East Lot 2,Norton Hall,0.15 mi,236,3 mins,199
+East Lot 2,Joe Mack Wilson Student Center,0.24 mi,391,6 mins,342
+East Lot 2,Stingers Dining Hall,0.38 mi,613,8 mins,497
+East Lot 2,W. Clair Harris Textile Center,0.33 mi,537,7 mins,425
+East Lot 2,Architecture,0.39 mi,631,8 mins,497
+East Lot 2,Design 1 Building,0.32 mi,519,7 mins,428
+East Lot 2,Design 2 Building,0.33 mi,531,7 mins,435
+West Deck,Science Lab Annex,0.13 mi,208,3 mins,192
+West Deck,Norton Hall,0.27 mi,438,6 mins,367
+West Deck,Joe Mack Wilson Student Center,0.28 mi,451,6 mins,384
+West Deck,Stingers Dining Hall,0.09 mi,139,2 mins,105
+West Deck,W. Clair Harris Textile Center,0.25 mi,396,5 mins,308
+West Deck,Architecture,0.35 mi,561,7 mins,440
+West Deck,Design 1 Building,0.09 mi,146,2 mins,121
+West Deck,Design 2 Building,0.12 mi,196,3 mins,156
+West Lot,Science Lab Annex,0.38 mi,619,9 mins,539
+West Lot,Norton Hall,0.36 mi,586,8 mins,497
+West Lot,Joe Mack Wilson Student Center,0.49 mi,785,11 mins,677
+West Lot,Stingers Dining Hall,0.27 mi,427,6 mins,372
+West Lot,W. Clair Harris Textile Center,0.18 mi,290,4 mins,257
+West Lot,Architecture,0.13 mi,207,3 mins,173
+West Lot,Design 1 Building,0.34 mi,544,8 mins,467
+West Lot,Design 2 Building,0.30 mi,475,7 mins,402
+East Economy Lot,Science Lab Annex,0.37 mi,600,8 mins,502
+East Economy Lot,Norton Hall,0.24 mi,388,5 mins,318
+East Economy Lot,Joe Mack Wilson Student Center,0.31 mi,503,7 mins,430
+East Economy Lot,Stingers Dining Hall,0.49 mi,788,11 mins,637
+East Economy Lot,W. Clair Harris Textile Center,0.44 mi,711,9 mins,565
+East Economy Lot,Architecture,0.47 mi,761,10 mins,599
+East Economy Lot,Design 1 Building,0.43 mi,693,9 mins,568
+East Economy Lot,Design 2 Building,0.44 mi,705,10 mins,575
+Shuttle Lot,Science Lab Annex,0.49 mi,790,12 mins,723
+Shuttle Lot,Norton Hall,0.62 mi,997,14 mins,869
+Shuttle Lot,Joe Mack Wilson Student Center,0.60 mi,965,14 mins,856
+Shuttle Lot,Stingers Dining Hall,0.37 mi,602,9 mins,537
+Shuttle Lot,W. Clair Harris Textile Center,0.50 mi,806,12 mins,698
+Shuttle Lot,Architecture,0.57 mi,924,13 mins,775
+Shuttle Lot,Design 1 Building,0.45 mi,728,11 mins,652
+Shuttle Lot,Design 2 Building,0.41 mi,664,10 mins,590
+East Economy Central,Science Lab Annex,0.36 mi,575,8 mins,503
+East Economy Central,Norton Hall,0.22 mi,351,5 mins,308
+East Economy Central,Joe Mack Wilson Student Center,0.40 mi,646,9 mins,564
+East Economy Central,Stingers Dining Hall,0.36 mi,573,8 mins,482
+East Economy Central,W. Clair Harris Textile Center,0.30 mi,479,7 mins,398
+East Economy Central,Architecture,0.30 mi,487,7 mins,400
+East Economy Central,Design 1 Building,0.35 mi,559,8 mins,485
+East Economy Central,Design 2 Building,0.31 mi,491,7 mins,420
+East Economy Southeast,Science Lab Annex,0.56 mi,894,13 mins,784
+East Economy Southeast,Norton Hall,0.46 mi,738,11 mins,642
+East Economy Southeast,Joe Mack Wilson Student Center,0.64 mi,1028,15 mins,894
+East Economy Southeast,Stingers Dining Hall,0.55 mi,891,13 mins,754
+East Economy Southeast,W. Clair Harris Textile Center,0.47 mi,755,11 mins,639
+East Economy Southeast,Architecture,0.33 mi,535,8 mins,457
+East Economy Southeast,Design 1 Building,0.55 mi,878,13 mins,759
+East Economy Southeast,Design 2 Building,0.50 mi,809,12 mins,693
+Central Lot 1,Wilder Communications Center,0.60 mi,968,13 mins,775
+Central Lot 1,Robin and Doug Shore Innovation Center,0.27 mi,438,6 mins,363
+Central Lot 2,Wilder Communications Center,0.61 mi,985,13 mins,798
+Central Lot 2,Robin and Doug Shore Innovation Center,0.30 mi,484,7 mins,408
+East Lot 1,Wilder Communications Center,0.59 mi,949,13 mins,750
+East Lot 1,Robin and Doug Shore Innovation Center,0.19 mi,308,4 mins,248
+East Lot 2,Wilder Communications Center,0.53 mi,847,11 mins,673
+East Lot 2,Robin and Doug Shore Innovation Center,0.13 mi,206,3 mins,171
+West Deck,Wilder Communications Center,0.39 mi,629,8 mins,489
+West Deck,Robin and Doug Shore Innovation Center,0.32 mi,523,7 mins,431
+West Lot,Wilder Communications Center,0.04 mi,64,1 min,51
+West Lot,Robin and Doug Shore Innovation Center,0.42 mi,671,9 mins,562
+East Economy Lot,Wilder Communications Center,0.61 mi,989,13 mins,779
+East Economy Lot,Robin and Doug Shore Innovation Center,0.24 mi,381,5 mins,312
+Shuttle Lot,Wilder Communications Center,0.63 mi,1008,14 mins,835
+Shuttle Lot,Robin and Doug Shore Innovation Center,0.67 mi,1082,16 mins,933
+East Economy Central,Wilder Communications Center,0.44 mi,716,10 mins,580
+East Economy Central,Robin and Doug Shore Innovation Center,0.23 mi,375,5 mins,325
+East Economy Southeast,Wilder Communications Center,0.45 mi,731,10 mins,610
+East Economy Southeast,Robin and Doug Shore Innovation Center,0.47 mi,762,11 mins,659
