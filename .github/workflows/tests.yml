@@ -15,5 +15,7 @@ jobs:
           cache: 'pip'
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: Compile application
+        run: python -m py_compile app.py ksu_parking_optimizer.py
       - name: Run regression tests
         run: python -m unittest discover -s tests -v
