@@ -1,0 +1,7 @@
+permit_id,permit_name,permit_color,marietta_parking_area,fall_2026_rate_usd,fall_spring_2026_2027_rate_usd,notes
+marietta_west,Marietta West Permit,Red,West Deck; West Residence Lot,110,220,Red permit; valid for West Deck or West Residence Lot.
+central_area,Central Area Permit,Green,Central Lots,110,220,Green permit; valid for the Central lots.
+east_area,East Area Permit,Yellow,East Lots,110,220,Yellow permit; valid for the East lots.
+shuttle_lot,Shuttle Lot Permit,Pink,Shuttle Lot,55,110,Pink permit; valid for the Shuttle lot.
+east_economy,East Economy Permit,Brown - Dashed,East Economy Lot,90,180,Brown dashed permit; valid for the East Economy lot.
+south_lot,West Lot Permit,Purple,West Lot,110,220,"Official permit color is purple; the current permit page may label this area South Lot, formerly West Lot."
