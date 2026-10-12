@@ -39,6 +39,18 @@ if "classes" not in st.session_state:
     st.session_state.classes = []
 if "result" not in st.session_state:
     st.session_state.result = None
+if "demo_mode" not in st.session_state:
+    st.session_state.demo_mode = False
+
+for key, value in {
+    "pref_walking": DEFAULT_PREFERENCES["walking"],
+    "pref_reliability": DEFAULT_PREFERENCES["reliability"],
+    "pref_shade": DEFAULT_PREFERENCES["shade"],
+    "pref_price": DEFAULT_PREFERENCES["price"],
+    "semester_week_value": 5,
+}.items():
+    if key not in st.session_state:
+        st.session_state[key] = value
 
 def ui_time_to_24(hour_12, minute, am_pm):
     h = int(hour_12)
@@ -109,6 +121,12 @@ def load_demo_schedule():
     ]
     st.session_state.classes = validate_schedule(demo, DATA_DIR)
     st.session_state.result = None
+    st.session_state.demo_mode = True
+    st.session_state.pref_walking = 38
+    st.session_state.pref_reliability = 42
+    st.session_state.pref_shade = 12
+    st.session_state.pref_price = 8
+    st.session_state.semester_week_value = 1
 
     # Preconfigure the example to demonstrate both "stay" and "leave" gap behavior.
     st.session_state["gap_Monday_09:15_12:00"] = "No"
@@ -139,6 +157,7 @@ with clear_col:
     if st.button("Clear schedule", key="clear_schedule_top"):
         st.session_state.classes = []
         st.session_state.result = None
+        st.session_state.demo_mode = False
         st.rerun()
 
 with st.form("add_class_form"):
@@ -187,6 +206,7 @@ if submitted:
         candidate = list(st.session_state.classes) + [row]
         st.session_state.classes = validate_schedule(candidate, DATA_DIR)
         st.session_state.result = None
+        st.session_state.demo_mode = False
         st.rerun()
     except Exception as exc:
         st.error(str(exc))
@@ -196,6 +216,13 @@ if st.session_state.classes:
     preview = display_schedule(st.session_state.classes)
     st.dataframe(preview, hide_index=True, width="stretch")
     st.caption(f"{len(st.session_state.classes)} classes entered.")
+
+    if st.session_state.demo_mode:
+        st.info(
+            "Example loaded: this schedule includes an early arrival, a midday peak class, "
+            "an after-5 PM return, two long gaps, and a second commute day. The example also "
+            "uses week 1 and custom priorities so the uncertainty and sensitivity features are visible."
+        )
 
     ordered = sorted_classes(st.session_state.classes)
     labels = [
@@ -218,6 +245,7 @@ if st.session_state.classes:
                 target = ordered[labels.index(choice)]
                 st.session_state.classes.remove(target)
                 st.session_state.result = None
+                st.session_state.demo_mode = False
                 st.rerun()
     with r3:
         st.write("")
@@ -225,6 +253,7 @@ if st.session_state.classes:
         if st.button("Clear all"):
             st.session_state.classes = []
             st.session_state.result = None
+            st.session_state.demo_mode = False
             st.rerun()
 
     with st.expander("Show exactly what the optimizer parsed"):
@@ -279,13 +308,13 @@ if st.session_state.classes:
 
     p1, p2, p3, p4 = st.columns(4)
     with p1:
-        walking = st.slider("Walking", 0, 100, DEFAULT_PREFERENCES["walking"])
+        walking = st.slider("Walking", 0, 100, key="pref_walking")
     with p2:
-        reliability = st.slider("Reliability", 0, 100, DEFAULT_PREFERENCES["reliability"])
+        reliability = st.slider("Reliability", 0, 100, key="pref_reliability")
     with p3:
-        shade = st.slider("Shade", 0, 100, DEFAULT_PREFERENCES["shade"])
+        shade = st.slider("Shade", 0, 100, key="pref_shade")
     with p4:
-        price = st.slider("Price", 0, 100, DEFAULT_PREFERENCES["price"])
+        price = st.slider("Price", 0, 100, key="pref_price")
 
     preferences = {
         "walking": walking,
@@ -294,7 +323,7 @@ if st.session_state.classes:
         "price": price,
     }
 
-    semester_week = st.slider("Semester week", 1, 16, 5)
+    semester_week = st.slider("Semester week", 1, 16, key="semester_week_value")
 
     st.header("4. Get your recommendation")
     if st.button("Recommend my permit", type="primary"):
